@@ -1,11 +1,12 @@
 import React from 'react'
 
 import { useQuery } from 'react-query'
+import {AxiosResponse} from 'axios'
 
 import { Placemark } from 'react-yandex-maps'
 
 interface IMarkers {
-    requestFunction: any
+    requestFunction: Promise<AxiosResponse<any>>
 }
 
 export const Markers: React.FC<IMarkers> = (props) => {
