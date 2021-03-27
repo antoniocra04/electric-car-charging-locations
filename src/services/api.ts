@@ -1,4 +1,5 @@
-import axios from 'axios'
+import axios, { AxiosResponse } from 'axios'
+import {IResponseGetLocation} from './interfaces'
 
 const apiKey = '46fa1933-9db6-4395-9a01-bbb925820dc3'
 
@@ -11,7 +12,7 @@ export const getElectricCarChargingLocations = async (
     maxResults: number,
     latitude: number,
     longitude: number
-) => {
+) : Promise<AxiosResponse<IResponseGetLocation>> => {
     return client.get(
         `/v3/poi/?output=json&countrycode=${contryCode}&maxresults=${maxResults}&compact=true&verbose=false&latitude=${latitude}&longitude=${longitude}&distance=10&distanceunit=KM&key=${apiKey}`
     )
