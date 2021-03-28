@@ -4,8 +4,6 @@ import { Header } from './components/Header'
 import { Map } from './components/Map'
 import { Markers } from './components/Markers'
 
-import { getElectricCarChargingLocations } from './services/api'
-
 import './styles/main.scss'
 
 const App: React.FC = () => {
@@ -14,12 +12,10 @@ const App: React.FC = () => {
             <Header />
             <Map center={[52.520008, 13.404954]} zoom={9}>
                 <Markers
-                    requestFunction={getElectricCarChargingLocations(
-                        'DE',
-                        10,
-                        52.52,
-                        13.404954
-                    )}
+                    contryCode={'DE'}
+                    maxResult={10}
+                    latitude={52.52}
+                    longitude={13.404954}
                 />
             </Map>
         </>

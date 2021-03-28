@@ -1,11 +1,11 @@
-export interface IResponseGetLocation{
+export interface IResponseGetLocation {
     IsRecentlyVerified: false
     ID: number
     UUID: string
     DataProviderID: number
     OperatorID: number
     UsageTypeID: number
-    AddressInfo:{
+    AddressInfo: {
         ID: number
         Title: string
         AddressLine1: string
